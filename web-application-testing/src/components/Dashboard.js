@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 const Dashboard = (props) => {
-    console.log(props)
     const {strike, ball, foul, score} = props.play
     return (
         <div>
