@@ -24,7 +24,7 @@ function App() {
         ball: () => {
           setBalls(balls + 1);
           if (balls === 3) {
-            return setBalls(0), setStrikes(0);
+            return setBalls(0), setStrikes(0), setHits(hits + 1);
           }
         },
 
