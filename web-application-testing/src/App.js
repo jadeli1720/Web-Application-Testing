@@ -9,51 +9,75 @@ function App() {
 
   const [strikes, setStrikes] = useState(0)
   const [balls, setBalls] = useState(0)
-  const [fouls, setFouls] = useState(0)
   const [hits, setHits] = useState(0)
 
 
-  const actions = {
-    strike: () => {
-      setStrikes(strikes + 1);
-      if (strikes === 2) {
-        return (setStrikes(0), setBalls(0));
-      }
-    },
+  // const actions = {
+  //   strikeScore: () => {
+  //     setStrikes(strikes + 1);
+  //     if (strikes === 2) {
+  //       return (setStrikes(0), setBalls(0));
+  //     }
+  //   },
 
-    ball: () => {
-      setBalls(balls + 1);
-      if (balls === 3) {
-        return (setBalls(0), setStrikes(0), setHits(hits + 1));
-      }
-    },
+  //   ballScore: () => {
+  //     setBalls(balls + 1);
+  //     if (balls === 3) {
+  //       return (setBalls(0), setStrikes(0), setHits(hits + 1));
+  //     }
+  //   },
 
-    foul: () => {
-      if (strikes <= 2) {
-        return setStrikes(strikes + 1)
-      }
-    },
+  //   foulScore: () => {
+  //     if (strikes !== 2) {
+  //       return setStrikes(strikes + 1)
+  //     }
+  //   },
 
-    score: () => {
-      setHits(hits + 1);
-      return (setBalls(0), setStrikes(0));
+  //   hitScore: () => {
+  //     setHits(hits + 1);
+  //     return (setBalls(0), setStrikes(0));
+  //   }
+  // }
 
+  const strikeScore = () => {
+    setStrikes(strikes + 1);
+    if (strikes === 2) {
+      return (setStrikes(0), setBalls(0));
     }
-  }
+  };
 
+  const ballScore = () => {
+    setBalls(balls + 1);
+    if (balls === 3) {
+      return (setBalls(0), setStrikes(0), setHits(hits + 1));
+    }
+  };
 
+  const foulScore = () => {
+    if (strikes !== 2) {
+      return setStrikes(strikes + 1)
+    }
+  };
+
+  const hitScore = () => {
+    setHits(hits + 1);
+    return (setBalls(0), setStrikes(0));
+  };
 
   return (
     <div className="App">
       <h1>Play Ball!</h1>
       <Display
-        strike={strikes}
-        ball={balls}
-        foul={fouls}
-        score={hits}
+        strike={strikeScore}
+        ball={ballScore}
+        foul={foulScore}
+        hit={hitScore}
+        
       />
       <Dashboard
-        play={actions}
+        // play={actions}
+        strikes={strikes} balls={balls} hits={hits}
+
       />
     </div>
   );

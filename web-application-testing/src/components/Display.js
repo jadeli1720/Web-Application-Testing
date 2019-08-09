@@ -4,11 +4,11 @@ const Display = (props) => {
     return (
         <div>
             <div className='Score'>
-                <p>Scores: {props.score}</p>
+                <p>Scores: {props.hits}</p>
             </div>
             <div className="strikes">
-                <p>Strikes: {props.strike}</p>
-                <p>Balls: {props.ball}</p>
+                <p>Strikes: {props.strikes}</p>
+                <p>Balls: {props.balls}</p>
             </div>
         </div>
     )
