@@ -9,75 +9,75 @@ describe('<Dashboard />', () => {
         render(<Dashboard />);
     });
 
-    //strike
-    it('strike', () => {
-        //destructuring
-        let clicked = false;
-        const  { getByText }  = render(<Dashboard strike={() => clicked = true} />);
-        const strikesButton = getByText(/strike/i);
-        fireEvent.click(strikesButton);
-        expect(clicked).toBe(true);
-    });
+    // //strike
+    // it('strike', () => {
+    //     //destructuring
+    //     let clicked = false;
+    //     const  { getByText }  = render(<Dashboard strike={() => clicked = true} />);
+    //     const strikesButton = getByText(/strike/i);
+    //     fireEvent.click(strikesButton);
+    //     expect(clicked).toBe(true);
+    // });
 
-    it('strike with mocked function', () => {
-        const click = jest.fn();
-        const  { getByText }  = render(<Dashboard strike={click} />);
-        const strikesButton = getByText(/strike/i);
-        fireEvent.click(strikesButton);
-        expect(click).toBeCalled();
-    });
+    // it('strike with mocked function', () => {
+    //     const click = jest.fn();
+    //     const  { getByText }  = render(<Dashboard strike={click} />);
+    //     const strikesButton = getByText(/strike/i);
+    //     fireEvent.click(strikesButton);
+    //     expect(click).toBeCalled();
+    // });
 
-    //Ball
-    it('ball', () => {
-        //destructuring
-        let clicked = false;
-        const  { getByText }  = render(<Dashboard ball={() => clicked = true} />);
-        const ballsButton = getByText(/ball/i);
-        fireEvent.click(ballsButton);
-        expect(clicked).toBe(true);
-    });
+    // //Ball
+    // it('ball', () => {
+    //     //destructuring
+    //     let clicked = false;
+    //     const  { getByText }  = render(<Dashboard ball={() => clicked = true} />);
+    //     const ballsButton = getByText(/ball/i);
+    //     fireEvent.click(ballsButton);
+    //     expect(clicked).toBe(true);
+    // });
 
-    it('ball with mocked function', () => {
-        const click = jest.fn();
-        const  { getByText }  = render(<Dashboard ball={click} />);
-        const ballsButton = getByText(/ball/i);
-        fireEvent.click(ballsButton);
-        expect(click).toBeCalled();
-    });
+    // it('ball with mocked function', () => {
+    //     const click = jest.fn();
+    //     const  { getByText }  = render(<Dashboard ball={click} />);
+    //     const ballsButton = getByText(/ball/i);
+    //     fireEvent.click(ballsButton);
+    //     expect(click).toBeCalled();
+    // });
 
-    //Foul
-    it('foul', () => {
-        //destructuring
-        let clicked = false;
-        const  { getByText }  = render(<Dashboard foul={() => clicked = true} />);
-        const foulsButton = getByText(/foul/i);
-        fireEvent.click(foulsButton);
-        expect(clicked).toBe(true);
-    });
+    // //Foul
+    // it('foul', () => {
+    //     //destructuring
+    //     let clicked = false;
+    //     const  { getByText }  = render(<Dashboard foul={() => clicked = true} />);
+    //     const foulsButton = getByText(/foul/i);
+    //     fireEvent.click(foulsButton);
+    //     expect(clicked).toBe(true);
+    // });
 
-    it('foul with mocked function', () => {
-        const click = jest.fn();
-        const  { getByText }  = render(<Dashboard foul={click} />);
-        const foulsButton = getByText(/foul/i);
-        fireEvent.click(foulsButton);
-        expect(click).toBeCalled();
-    });
+    // it('foul with mocked function', () => {
+    //     const click = jest.fn();
+    //     const  { getByText }  = render(<Dashboard foul={click} />);
+    //     const foulsButton = getByText(/foul/i);
+    //     fireEvent.click(foulsButton);
+    //     expect(click).toBeCalled();
+    // });
 
-        //Hit
-        it('hit', () => {
-            //destructuring
-            let clicked = false;
-            const  { getByText }  = render(<Dashboard hit={() => clicked = true} />);
-            const hitsButton = getByText(/hit/i);
-            fireEvent.click(hitsButton);
-            expect(clicked).toBe(true);
-        });
+    //     //Hit
+    //     it('hit', () => {
+    //         //destructuring
+    //         let clicked = false;
+    //         const  { getByText }  = render(<Dashboard hit={() => clicked = true} />);
+    //         const hitsButton = getByText(/hit/i);
+    //         fireEvent.click(hitsButton);
+    //         expect(clicked).toBe(true);
+    //     });
     
-        it('hit with mocked function', () => {
-            const click = jest.fn();
-            const  { getByText }  = render(<Dashboard hit={click} />);
-            const hitsButton = getByText(/hit/i);
-            fireEvent.click(hitsButton);
-            expect(click).toBeCalled();
-        });
+    //     it('hit with mocked function', () => {
+    //         const click = jest.fn();
+    //         const  { getByText }  = render(<Dashboard hit={click} />);
+    //         const hitsButton = getByText(/hit/i);
+    //         fireEvent.click(hitsButton);
+    //         expect(click).toBeCalled();
+    //     });
 });
